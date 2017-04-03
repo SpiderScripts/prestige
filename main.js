@@ -53,6 +53,7 @@ function resetPrestige() {
 		coins: 0,
 		prestiges: [0,0,0,0,0,0,0,0,0,0]
 	};
+	localStorage.PrestigeSave = JSON.stringify(data);
 	cycle = setInterval(function () { tick(); }, 100);
 }
 
