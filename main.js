@@ -6,7 +6,7 @@ var data = {
 var cycle;
 
 function tick() {
-	update();
+	update(10);
 	draw();
 }
 
@@ -54,11 +54,12 @@ function resetPrestige() {
 		prestiges: [0,0,0,0,0,0,0,0,0,0]
 	};
 	localStorage.PrestigeSave = JSON.stringify(data);
-	cycle = setInterval(function () { tick(); }, 100);
+	cycle = setInterval(function () { tick(); }, 10);
 }
 
-function update() {
-	data.coins += getGain();
+function update(interval) {
+	var time = interval / 1000
+	data.coins += Math.round(getGain()/time);
 	localStorage.PrestigeSave = JSON.stringify(data);
 }
 
