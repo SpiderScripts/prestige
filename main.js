@@ -41,10 +41,10 @@ function activatePrestige(id) {
 }
 
 function resetPrestige() {
-	data = {
-		coins: 0,
-		prestiges: [0,0,0,0,0,0,0,0,0,0]
-	};
+	data.coins = 0
+	data.prestiges = [0,0,0,0,0,0,0,0,0,0]
+	update()
+	draw()
 }
 
 function update() {
