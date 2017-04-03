@@ -3,7 +3,7 @@ var data = {
 	prestiges: [0,0,0,0,0,0,0,0,0,0]
 };
 
-var cycle = setInterval(function () { tick(); }, 1000);
+var cycle = setInterval(function () { tick(); }, 10);
 
 function tick() {
 	update();
