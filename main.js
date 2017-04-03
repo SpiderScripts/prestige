@@ -3,6 +3,13 @@ var data = {
 	prestiges: [0,0,0,0,0,0,0,0,0,0]
 };
 
+var cycle = setInterval(function () { tick(); }, 1000);
+
+function tick() {
+	update();
+	draw();
+}
+
 function getGain() {
 	var gain = 1;
 	data.prestiges.forEach(function (el) {
@@ -45,8 +52,8 @@ function resetPrestige() {
 	for (var i = 0; i < id; i++) {
 		data.prestiges[i] = 0;
 	}
-	update();
-	draw();
+	stopInterval(cycle);
+	cycle = setInterval(function () { tick(); }, 1000);
 }
 
 function update() {
@@ -92,9 +99,4 @@ window.addEventListener("load",function () {
 			})
 		}(i))
 	);
-	setInterval(function () {
-		update();
-		draw();
-	}, 1000);
-	console.log("interval loaded")
 })
