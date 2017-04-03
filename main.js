@@ -15,7 +15,7 @@ function getRequirement(id) {
 	if (id === 0) {
 		return Math.floor(Math.pow(1.5,data.prestiges[0])*10);
 	} else {
-		return Math.pow(id+1,data.prestiges[id]+1)
+		return Math.pow(id+1,data.prestiges[id]+1);
 	}
 }
 
@@ -69,7 +69,7 @@ function draw() {
 
 window.addEventListener("load",function () {
 	if (localStorage.PrestigeSave) {
-		data = JSON.parse(localStorage.PrestigeSave)
+		data = JSON.parse(localStorage.PrestigeSave);
 	}
 	draw();
 	for (var i = 0; i < 10; i++) {
