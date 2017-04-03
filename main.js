@@ -47,7 +47,7 @@ function resetPrestige() {
 }
 
 function update() {
-	data.coins += Math.round(getGain()/10);
+	data.coins += getGain();
 	localStorage.PrestigeSave = JSON.stringify(data);
 }
 
@@ -92,6 +92,6 @@ window.addEventListener("load",function () {
 	setInterval(function () {
 		update();
 		draw();
-	}, 100);
+	}, 1000);
 	console.log("interval loaded")
 })
