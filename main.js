@@ -45,13 +45,15 @@ function activatePrestige(id) {
 function resetPrestige() {
 	data.coins = 0;
 	data.prestiges = [0,0,0,0,0,0,0,0,0,0];
-	update(1000);
+	update();
 	draw();
 }
 
-function update(interval) {
-	var time = 1000 / interval;
-	data.coins += Math.round(getGain()/time);
+#function update(interval) {
+#	var time = (1000 / interval);
+#	data.coins += Math.round(getGain()/time);
+function update() {
+	data.coins += getGain();
 	localStorage.PrestigeSave = JSON.stringify(data);
 }
 
@@ -94,7 +96,7 @@ window.addEventListener("load",function () {
 		}(i))
 	);
 	setInterval(function () {
-		update(10);
+		update();
 		draw();
 	}, 10);
 	console.log("interval loaded")
