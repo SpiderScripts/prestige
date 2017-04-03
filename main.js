@@ -43,6 +43,7 @@ function activatePrestige(id) {
 function resetPrestige() {
 	data.coins = 0
 	data.prestiges = [0,0,0,0,0,0,0,0,0,0]
+	update()
 	localStorage.PrestigeSave = JSON.stringify(data);
 	draw()
 }
