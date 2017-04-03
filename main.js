@@ -53,13 +53,13 @@ function resetPrestige() {
 		coins: 0,
 		prestiges: [0,0,0,0,0,0,0,0,0,0]
 	};
-	localStorage.PrestigeSave = JSON.stringify(data);
+	localStorage.setItem("PrestigeSave",JSON.stringify(data);
 	cycle = setInterval(function () { tick(); }, 100);
 }
 
 function update() {
 	data.coins += getGain();
-	localStorage.PrestigeSave = JSON.stringify(data);
+	localStorage.setItem("PrestigeSave",JSON.stringify(data);
 }
 
 function draw() {
@@ -78,8 +78,8 @@ function draw() {
 }
 
 window.addEventListener("load",function () {
-	if (localStorage.PrestigeSave) {
-		data = JSON.parse(localStorage.PrestigeSave);
+	if (localStorage.getItem("PrestigeSave")) {
+		data = JSON.parse(localStorage.getItem("PrestigeSave"));
 	}
 	draw();
 	for (var i = 0; i < 10; i++) {
