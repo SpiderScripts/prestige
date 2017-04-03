@@ -41,15 +41,15 @@ function activatePrestige(id) {
 }
 
 function resetPrestige() {
-	data.coins = 0
-	data.prestiges = [0,0,0,0,0,0,0,0,0,0]
-	update()
-	localStorage.PrestigeSave = JSON.stringify(data);
-	draw()
+	data.coins = 0;
+	data.prestiges = [0,0,0,0,0,0,0,0,0,0];
+	update(1000);
+	draw();
 }
 
-function update() {
-	data.coins += getGain();
+function update(interval) {
+	time = 1000 / interval
+	data.coins += Math.round(getGain()/time);
 	localStorage.PrestigeSave = JSON.stringify(data);
 }
 
@@ -92,8 +92,8 @@ window.addEventListener("load",function () {
 		}(i))
 	);
 	setInterval(function () {
-		update();
+		update(10);
 		draw();
-	}, 1000);
+	}, 10);
 	console.log("interval loaded")
 })
