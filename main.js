@@ -47,7 +47,7 @@ function resetPrestige() {
 }
 
 function update() {
-	data.coins += getGain()/100;
+	data.coins += Math.round(getGain()/100);
 	localStorage.PrestigeSave = JSON.stringify(data);
 }
 
