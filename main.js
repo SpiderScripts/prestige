@@ -1,5 +1,3 @@
-
-
 var data = {
 	coins: 0,
 	prestiges: [0,0,0,0,0,0,0,0,0,0]
@@ -49,9 +47,6 @@ function resetPrestige() {
 	draw();
 }
 
-#function update(interval) {
-#	var time = (1000 / interval);
-#	data.coins += Math.round(getGain()/time);
 function update() {
 	data.coins += getGain();
 	localStorage.PrestigeSave = JSON.stringify(data);
@@ -98,6 +93,6 @@ window.addEventListener("load",function () {
 	setInterval(function () {
 		update();
 		draw();
-	}, 10);
+	}, 100);
 	console.log("interval loaded")
 })
