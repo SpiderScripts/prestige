@@ -42,7 +42,9 @@ function activatePrestige(id) {
 
 function resetPrestige() {
 	data.coins = 0;
-	data.prestiges = [0,0,0,0,0,0,0,0,0,0];
+	for (var i = 0; i < id; i++) {
+		data.prestiges[i] = 0;
+	}
 	update();
 	draw();
 }
