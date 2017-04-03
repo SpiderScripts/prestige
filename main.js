@@ -59,12 +59,12 @@ function resetPrestige() {
 
 function update(interval) {
 	var time = interval / 1000
-	data.coins += Math.round(getGain() * time);
+	data.coins += getGain() * time;
 	localStorage.PrestigeSave = JSON.stringify(data);
 }
 
 function draw() {
-	document.getElementById("coins").innerHTML = data.coins;
+	document.getElementById("coins").innerHTML = Math.round(data.coins);
 	document.getElementById("gain").innerHTML = getGain();
 	data.prestiges.forEach(function (el, i) {
 		document.getElementById("tier"+(i+1)+"cost").innerHTML = getRequirement(i);
