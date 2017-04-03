@@ -1,3 +1,5 @@
+
+
 var data = {
 	coins: 0,
 	prestiges: [0,0,0,0,0,0,0,0,0,0]
@@ -48,7 +50,7 @@ function resetPrestige() {
 }
 
 function update(interval) {
-	time = 1000 / interval;
+	var time = 1000 / interval;
 	data.coins += Math.round(getGain()/time);
 	localStorage.PrestigeSave = JSON.stringify(data);
 }
