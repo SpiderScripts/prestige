@@ -48,10 +48,10 @@ function activatePrestige(id) {
 }
 
 function resetPrestige() {
-	data.coins = 0;
-	for (var i = 0; i < id; i++) {
-		data.prestiges[i] = 0;
-	}
+	data = {
+		coins: 0,
+		prestiges: [0,0,0,0,0,0,0,0,0,0]
+	};
 	stopInterval(cycle);
 	cycle = setInterval(function () { tick(); }, 1000);
 }
