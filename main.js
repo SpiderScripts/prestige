@@ -3,7 +3,7 @@ var data = {
 	prestiges: [0,0,0,0,0,0,0,0,0,0]
 };
 
-var cycle = setInterval(function () { tick(); }, 10);
+var cycle;
 
 function tick() {
 	update();
@@ -92,4 +92,5 @@ window.addEventListener("load",function () {
 		);
 	}
 	document.getElementById("reset").addEventListener("click",resetPrestige);
+	cycle = setInterval(function () { tick(); }, 10);
 })
