@@ -33,7 +33,7 @@ function activatePrestige(id) {
 				data.coins -= getRequirement(0);
 			}
 			for (var i = 0; i < id; i++) {
-				data.prestiges[i] = 0;
+				data.prestiges[i] -= getRequirement(i);
 			}
 			data.prestiges[id]++;
 	}
