@@ -58,8 +58,8 @@ function resetPrestige() {
 }
 
 function update(interval) {
-	var time = 1000 / interval
-	data.coins += Math.round(getGain()/time);
+	var time = interval / 1000
+	data.coins += Math.round(getGain() * time);
 	localStorage.PrestigeSave = JSON.stringify(data);
 }
 
