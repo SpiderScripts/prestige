@@ -29,7 +29,9 @@ function canActivatePrestige(id) {
 
 function activatePrestige(id) {
 	if (canActivatePrestige(id)) {
-			data.coins = 0;
+			if (id===0) {
+				data.coins -= getRequirement(0);
+			}
 			for (var i = 0; i < id; i++) {
 				data.prestiges[i] = 0;
 			}
