@@ -105,19 +105,19 @@ window.addEventListener("load",function () {
 	for (var i = 0; i < 10; i++) {
 		document.getElementById("tier"+(i+1)+"btn").addEventListener(
 			"click",
-			(function(n) {
+			(function() {
 				return (function () {
-					activatePrestige(n,1);
+					activatePrestige(i,1);
 				})
-			}(i))
+			})
 		);
 		document.getElementById("tier"+(i+1)+"btn10").addEventListener(
 			"click",
-			(function(n) {
+			(function() {
 				return (function () {
-					activatePrestige(n,10);
+					activatePrestige(i,10);
 				})
-			}(i))
+			})
 		);
 	}
 	document.getElementById("reset").addEventListener("click",resetPrestige);
