@@ -18,45 +18,31 @@ function getGain() {
 	return gain;
 }
 
-function getRequirement(id) {
+function getRequirement(id,no) {
 	if (id === 0) {
-		return Math.floor(Math.pow(1.2,data.prestiges[0])*10);
+		return Math.floor(Math.pow(1.2,data.prestiges[0])*((1-Math.pow(1.2,no))/(1-1.2))*10);
 	} else {
-		return Math.floor(Math.pow(id*1.2,data.prestiges[id]+1));
+		return Math.floor(Math.pow(id*1.2,data.prestiges[id]+1)*((1-Math.pow(1.2,no))/(1-1.2)));
 	}
-}
-
-function getMultiple(id,no) {
-	var a = getRequirement(id);
-	return Math.floor(a*(1-Math.pow(1.2,no))/(1-1.2));
 }
 
 function canActivatePrestige(id,no) {
-	if (no===1) {
-		if (id===0) {
-			return (data.coins >= getRequirement(0));
-		} else {
-			return (data.prestiges[id-1] >= getRequirement(id));
-		}
-	}
-	else {
-		if (id===0) {
-			return (data.coins >= getMultiple(0,no));
-		} else {
-			return (data.prestiges[id-1] >= getMultiple(id.no));
-		}		
-	}
+	if (id===0) {
+		return (data.coins >= getRequirement(0,no));
+	} else {
+		return (data.prestiges[id-1] >= getRequirement(id.no));
+	}		
 }
 
 function activatePrestige(id,no) {
 	if (canActivatePrestige(id,no)) {
 			if (id===0) {
-				data.coins -= getRequirement(0);
+				data.coins -= getRequirement(0,no);
 			}
 			else {
-				data.prestiges[id-1] -= getRequirement(id);
+				data.prestiges[id-1] -= getRequirement(id,no);
 			}
-			data.prestiges[id]++;
+			data.prestiges[id] += no;
 	}
 	draw();
 }
