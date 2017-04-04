@@ -27,8 +27,8 @@ function getRequirement(id) {
 }
 
 function getMultiple(id,no) {
-	var a = getRequirement(id)
-	return Math.floor(a*(1-Math.pow(1.2,no))/1-1.2))
+	var a = getRequirement(id);
+	return Math.floor(a*(1-Math.pow(1.2,no))/1-1.2));
 }
 
 function canActivatePrestige(id,no) {
