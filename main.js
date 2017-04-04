@@ -35,6 +35,9 @@ function canActivatePrestige(id,no) {
 }
 
 function activatePrestige(id,no) {
+	console.log("Prestige activated");
+	console.log(id);
+	console.log(no);
 	if (canActivatePrestige(id,no)) {
 			if (id===0) {
 				data.coins -= getRequirement(0,no);
