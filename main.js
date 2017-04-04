@@ -49,7 +49,7 @@ function canActivatePrestige(id,no) {
 }
 
 function activatePrestige(id,no) {
-	if (canActivatePrestige(id)) {
+	if (canActivatePrestige(id,no)) {
 			if (id===0) {
 				data.coins -= getRequirement(0);
 			}
