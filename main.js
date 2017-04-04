@@ -26,11 +26,25 @@ function getRequirement(id) {
 	}
 }
 
+function getMultiple(id,no) {
+	var a = getRequirement(id)
+	return Math.floor(a*(1-Math.pow(1.2,no))/1-1.2))
+}
+
 function canActivatePrestige(id,no) {
-	if (id===0) {
-		return (data.coins >= getRequirement(0));
-	} else {
-		return (data.prestiges[id-1] >= getRequirement(id));
+	if (no===1) {
+		if (id===0) {
+			return (data.coins >= getRequirement(0));
+		} else {
+			return (data.prestiges[id-1] >= getRequirement(id));
+		}
+	}
+	else {
+		if (id===0) {
+			return (data.coins >= getMultiple(0,no));
+		} else {
+			return (data.prestiges[id-1] >= getMultiple(id.no));
+		}		
 	}
 }
 
