@@ -103,22 +103,16 @@ window.addEventListener("load",function () {
 	}
 	draw();
 	for (var i = 0; i < 10; i++) {
-		document.getElementById("tier"+(i+1)+"btn").addEventListener(
-			"click",
-			(function() {
-				return (function () {
-					activatePrestige(i,1);
-				})
-			})
-		);
-		document.getElementById("tier"+(i+1)+"btn10").addEventListener(
-			"click",
-			(function() {
-				return (function () {
-					activatePrestige(i,10);
-				})
-			})
-		);
+		document.getElementById("tier"+(i+1)+"btn").addEventListener("click", function() { activatePrestige(i,1); });
+		document.getElementById("tier"+(i+1)+"btn10").addEventListener("click", function() { activatePrestige(i,10); });
+#		document.getElementById("tier"+(i+1)+"btn10").addEventListener(
+#			"click",
+#			(function() {
+#				return (function () {
+#					activatePrestige(i,10);
+#				})
+#			})
+#		);
 	}
 	document.getElementById("reset").addEventListener("click",resetPrestige);
 	cycle = setInterval(function () { tick(); }, 10);
