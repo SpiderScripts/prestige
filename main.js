@@ -98,10 +98,14 @@ window.addEventListener("load",function () {
 					activatePrestige(n,1);
 				})
 			}(i))
-		});
-		document.getElementById("tier"+(i+1)+"btn10").addEventListener("click", function() {
-			activatePrestige(i,10);
-		});
+		);
+		document.getElementById("tier"+(i+1)+"btn10").addEventListener("click",
+			(function(n) {
+				return (function () {
+					activatePrestige(n,10);
+				})
+			}(i))
+		);
 	}
 	document.getElementById("reset").addEventListener("click",resetPrestige);
 	cycle = setInterval(function () { tick(); }, 10);
