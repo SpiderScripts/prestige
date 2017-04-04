@@ -65,11 +65,17 @@ function activatePrestige(id,no) {
 
 function resetPrestige() {
 	clearInterval(cycle);
+	data.prestiges.forEach(function (el, i) {
+		document.getElementById("game").deleteRow(-1);
+	});
 	data = {
 		coins: 0,
 		prestiges: [0]
 	};
+	addRow(0);
+	draw();
 	localStorage.PrestigeSave = JSON.stringify(data);
+	
 	cycle = setInterval(function () { tick(); }, 10);
 }
 
