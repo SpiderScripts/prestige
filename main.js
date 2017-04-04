@@ -22,7 +22,7 @@ function getRequirement(id) {
 	if (id === 0) {
 		return Math.floor(Math.pow(1.2,data.prestiges[0])*10);
 	} else {
-		return Math.floor(Math.pow(id*1.1,data.prestiges[id]+1)*id);
+		return Math.floor(Math.pow(id*1.2,data.prestiges[id]+1));
 	}
 }
 
