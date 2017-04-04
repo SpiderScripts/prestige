@@ -67,7 +67,7 @@ function draw() {
 	document.getElementById("coins").innerHTML = Math.round(data.coins);
 	document.getElementById("gain").innerHTML = getGain();
 	data.prestiges.forEach(function (el, i) {
-		document.getElementById("tier"+(i+1)+"cost").innerHTML = getRequirement(i);
+		document.getElementById("tier"+(i+1)+"cost").innerHTML = getRequirement(i,1);
 		document.getElementById("tier"+(i+1)+"a").innerHTML = el;
 		document.getElementById("tier"+(i+1)+"mul").innerHTML = "x"+(el+1);
 		if (canActivatePrestige(i,1)) {
